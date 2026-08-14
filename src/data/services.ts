@@ -18,7 +18,7 @@ export const services: Service[] = [
     id: 's-2',
     title: 'Pre-Wedding Romance',
     description: 'Intimate, cinematic couple portraits amidst Kerala natural landscapes, heritage backwaters, and luxury architectural venues.',
-    image: '/images/client/16E9CENfCEoCsCZ05I3dkHSEoBWD9Vwo2_DSC01056.jpg',
+    image: '/images/client/1-iqsBARTBUeI_hgFsg_dTa7PtIUTOLMm_DSC03476.JPG',
     slug: 'pre-wedding',
   },
   {
