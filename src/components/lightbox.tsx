@@ -88,14 +88,15 @@ export function Lightbox({ images, initialIndex, isOpen, onClose }: LightboxProp
             onClick={onClose}
             onMouseEnter={() => setCursorVariant('button')}
             onMouseLeave={() => setCursorVariant('default')}
-            className="lightbox-control absolute top-6 right-6 md:top-8 md:right-8 z-[2010] text-label text-stone hover:text-bronze flex items-center gap-2 w-10 h-10 justify-center"
+            className="lightbox-control absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 z-[2010] text-label text-stone hover:text-bronze flex items-center justify-center gap-1.5 w-11 h-11 bg-black/40 sm:bg-transparent rounded-full backdrop-blur-sm sm:backdrop-blur-none cursor-pointer"
+            aria-label="Close lightbox"
           >
             <span className="hidden md:inline">CLOSE</span>
             <span className="text-2xl leading-none">×</span>
           </button>
 
           {/* Counter */}
-          <div className="absolute top-6 left-6 md:top-8 md:left-8 z-[2010] text-label text-stone/60">
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-8 z-[2010] text-label text-stone/70 bg-black/40 sm:bg-transparent px-3 py-1.5 rounded-full backdrop-blur-sm sm:backdrop-blur-none text-xs">
             {String(currentIndex + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
           </div>
 
@@ -104,10 +105,10 @@ export function Lightbox({ images, initialIndex, isOpen, onClose }: LightboxProp
             onClick={() => navigate(-1)}
             onMouseEnter={() => setCursorVariant('lightbox-left')}
             onMouseLeave={() => setCursorVariant('default')}
-            className="lightbox-control absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-[2010] w-14 h-14 flex items-center justify-center text-stone hover:text-bronze"
+            className="lightbox-control absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-[2010] w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center text-stone hover:text-bronze bg-black/40 sm:bg-transparent rounded-full backdrop-blur-sm sm:backdrop-blur-none cursor-pointer"
             aria-label="Previous image"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -115,10 +116,10 @@ export function Lightbox({ images, initialIndex, isOpen, onClose }: LightboxProp
             onClick={() => navigate(1)}
             onMouseEnter={() => setCursorVariant('lightbox-right')}
             onMouseLeave={() => setCursorVariant('default')}
-            className="lightbox-control absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-[2010] w-14 h-14 flex items-center justify-center text-stone hover:text-bronze"
+            className="lightbox-control absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-[2010] w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center text-stone hover:text-bronze bg-black/40 sm:bg-transparent rounded-full backdrop-blur-sm sm:backdrop-blur-none cursor-pointer"
             aria-label="Next image"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -127,7 +128,7 @@ export function Lightbox({ images, initialIndex, isOpen, onClose }: LightboxProp
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={currentIndex}
-              className="w-full h-full flex items-center justify-center p-12 md:p-20 cursor-grab active:cursor-grabbing"
+              className="w-full h-full flex items-center justify-center p-3 sm:p-8 md:p-20 cursor-grab active:cursor-grabbing"
               onMouseEnter={() => setCursorVariant('drag')}
               onMouseLeave={() => setCursorVariant('default')}
               custom={direction}

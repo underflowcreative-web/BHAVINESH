@@ -35,7 +35,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="relative h-screen w-full overflow-hidden bg-primary">
+    <section id="hero" className="relative min-h-[100svh] w-full overflow-hidden bg-primary flex flex-col justify-end">
       <AnimatePresence initial={false}>
         <motion.div
           key={currentIndex}
@@ -56,13 +56,13 @@ export function Hero() {
       <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(6,6,6,0.65)_100%)] pointer-events-none" />
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-primary/95 via-primary/35 to-transparent pointer-events-none" />
 
-      <div className="relative z-20 flex h-full flex-col justify-end pb-20 sm:pb-24 pt-20 section-padding">
-        <div className="max-w-5xl space-y-7 md:space-y-9">
+      <div className="relative z-20 flex flex-col justify-end pb-16 sm:pb-24 pt-24 sm:pt-28 section-padding">
+        <div className="max-w-5xl space-y-5 sm:space-y-7 md:space-y-9">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 3.2, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-hero text-white leading-[0.95] font-display font-light tracking-tight"
+            className="text-[clamp(2.1rem,8.5vw,10rem)] text-white leading-[1] font-display font-light tracking-tight"
           >
             Crafting Timeless<br />
             Stories Through Light.
@@ -72,20 +72,20 @@ export function Hero() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 3.4, ease: 'easeInOut' }}
-            className="h-[1px] w-24 bg-[#8B7355] origin-left"
+            className="h-[1px] w-20 sm:w-24 bg-[#8B7355] origin-left"
           />
 
-          <div className="flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between pt-2">
+          <div className="flex flex-col items-start gap-6 sm:gap-8 md:flex-row md:items-end md:justify-between pt-1 sm:pt-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 3.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="max-w-xl space-y-5"
+              className="max-w-xl space-y-3.5 sm:space-y-5"
             >
               {/* Ultra-Refined Luxury Category Wrap List */}
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[9.5px] sm:text-[10.5px] font-heading font-light tracking-[0.26em] uppercase text-[#8B7355]/85 leading-relaxed">
+              <div className="flex flex-wrap items-center gap-x-3 sm:gap-x-5 gap-y-1.5 sm:gap-y-2.5 text-[9px] sm:text-[10.5px] font-heading font-light tracking-[0.22em] sm:tracking-[0.26em] uppercase text-[#8B7355]/85 leading-relaxed">
                 {categoryList.map((cat, i) => (
-                  <span key={cat} className="inline-flex items-center gap-5">
+                  <span key={cat} className="inline-flex items-center gap-3 sm:gap-5">
                     <span>{cat}</span>
                     {i < categoryList.length - 1 && (
                       <span className="w-[3px] h-[3px] rounded-full bg-[#8B7355]/35 inline-block" />
@@ -104,13 +104,13 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 3.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="flex items-center gap-4 flex-shrink-0"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 flex-shrink-0 w-full sm:w-auto"
             >
               <a
                 href="#contact"
                 onMouseEnter={() => setCursorVariant('button')}
                 onMouseLeave={() => setCursorVariant('default')}
-                className="uppercase tracking-[0.24em] font-heading text-[11px] sm:text-xs border border-white/20 hover:border-[#8B7355] px-7 py-3.5 transition-all duration-300 text-[#e8e4df] hover:text-[#8B7355] inline-block"
+                className="uppercase tracking-[0.22em] font-heading text-xs border border-white/20 hover:border-[#8B7355] px-6 sm:px-7 py-3.5 transition-all duration-300 text-[#e8e4df] hover:text-[#8B7355] text-center justify-center flex items-center min-h-[44px]"
               >
                 BOOK A SESSION
               </a>
@@ -118,7 +118,7 @@ export function Hero() {
                 href="#contact"
                 onMouseEnter={() => setCursorVariant('button')}
                 onMouseLeave={() => setCursorVariant('default')}
-                className="uppercase tracking-[0.24em] font-heading text-[11px] sm:text-xs bg-[#8B7355] hover:bg-[#8B7355]/80 px-7 py-3.5 transition-all duration-300 text-white inline-block"
+                className="uppercase tracking-[0.22em] font-heading text-xs bg-[#8B7355] hover:bg-[#8B7355]/80 px-6 sm:px-7 py-3.5 transition-all duration-300 text-white text-center justify-center flex items-center min-h-[44px]"
               >
                 ENQUIRE NOW
               </a>
@@ -132,7 +132,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 4 }}
-        className="absolute bottom-5 sm:bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2.5 pointer-events-none"
+        className="hidden sm:flex absolute bottom-5 sm:bottom-6 left-1/2 z-20 -translate-x-1/2 flex-col items-center gap-2.5 pointer-events-none"
       >
         <div className="h-8 w-[1px] bg-white/10 overflow-hidden">
           <motion.div

@@ -7,21 +7,21 @@ export function Footer() {
   const { setCursorVariant } = useCursor();
 
   return (
-    <footer className="bg-primary border-t border-white/5 py-20 section-padding overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col gap-20">
+    <footer className="bg-primary border-t border-white/5 py-12 sm:py-20 section-padding overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-20">
         <ScrollReveal>
-          <h2 className="font-display text-[clamp(4rem,15vw,16rem)] text-white/[0.03] leading-none text-center select-none tracking-tighter w-full">
+          <h2 className="font-display text-[clamp(2.75rem,13vw,16rem)] text-white/[0.03] leading-none text-center select-none tracking-tighter w-full max-w-full overflow-hidden">
             BHAVINESH
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14 text-label tracking-widest text-sm text-stone">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-14 text-label tracking-[0.16em] sm:tracking-widest text-xs sm:text-sm text-stone">
             <a 
               href="https://instagram.com/bhavinesh_bharathan" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-bronze transition-colors nav-link-premium flex items-center gap-2"
+              className="hover:text-bronze transition-colors nav-link-premium flex items-center gap-1.5 sm:gap-2 py-2 px-1 min-h-[44px]"
               onMouseEnter={() => setCursorVariant('link')}
               onMouseLeave={() => setCursorVariant('default')}
             >
@@ -34,7 +34,7 @@ export function Footer() {
               href="https://youtube.com/@bhavinesh_bharathan?si=koxylJ8cPVBQS2K8" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-bronze transition-colors nav-link-premium flex items-center gap-2"
+              className="hover:text-bronze transition-colors nav-link-premium flex items-center gap-1.5 sm:gap-2 py-2 px-1 min-h-[44px]"
               onMouseEnter={() => setCursorVariant('link')}
               onMouseLeave={() => setCursorVariant('default')}
             >
@@ -45,7 +45,7 @@ export function Footer() {
             </a>
             <a 
               href="mailto:bhavineshbharathan@gmail.com"
-              className="hover:text-bronze transition-colors nav-link-premium"
+              className="hover:text-bronze transition-colors nav-link-premium py-2 px-1 min-h-[44px] flex items-center"
               onMouseEnter={() => setCursorVariant('link')}
               onMouseLeave={() => setCursorVariant('default')}
             >
@@ -53,22 +53,22 @@ export function Footer() {
             </a>
             <a 
               href="tel:+919544885698"
-              className="hover:text-bronze transition-colors nav-link-premium"
+              className="hover:text-bronze transition-colors nav-link-premium py-2 px-1 min-h-[44px] flex items-center"
               onMouseEnter={() => setCursorVariant('link')}
               onMouseLeave={() => setCursorVariant('default')}
             >
               PHONE
             </a>
-            <span className="cursor-default text-stone/50">LOCATION: KERALA, INDIA</span>
+            <span className="cursor-default text-stone/50 py-2 px-1 min-h-[44px] flex items-center text-center">LOCATION: KERALA, INDIA</span>
           </div>
         </ScrollReveal>
 
         {/* Copyright & Credit Line */}
         <ScrollReveal delay={0.4}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs text-white/30 tracking-wider text-center border-t border-white/5 pt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs text-white/30 tracking-wider text-center border-t border-white/5 pt-6 sm:pt-8 px-4">
             <span>© 2026 Bhavinesh Bharathan Photography. All rights reserved.</span>
             <span className="hidden sm:inline text-white/10">|</span>
-            <span className="text-stone/40 font-light">
+            <span className="text-stone/40 font-light leading-relaxed">
               Designed & Developed by <span className="text-stone/85 font-medium tracking-wide text-white/90">ADHITHYAN PALAKKAL</span> (<span className="text-stone/75 font-normal">UnderflowCreatives</span>) · <a href="mailto:underflow.creative@gmail.com" className="hover:text-bronze transition-colors text-stone/60 font-normal">underflow.creative@gmail.com</a>
             </span>
           </div>

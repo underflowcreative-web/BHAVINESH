@@ -124,13 +124,13 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-secondary section-padding py-32 relative overflow-hidden">
+    <section id="contact" className="bg-secondary section-padding py-16 sm:py-24 md:py-32 relative overflow-hidden">
       {/* Ambient Glow */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-bronze/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <ScrollReveal>
-          <div className="mb-20 space-y-4">
+          <div className="mb-10 sm:mb-16 md:mb-20 space-y-3 sm:space-y-4">
             <span className="text-label text-bronze tracking-[0.25em] uppercase text-xs font-semibold">
               Seamless Online Enquiry
             </span>
@@ -138,15 +138,15 @@ export function Contact() {
               Let's Create<br />
               Something Extraordinary
             </h2>
-            <p className="text-body-lg text-stone max-w-xl">
+            <p className="text-body-lg text-stone max-w-xl text-xs sm:text-base">
               Fill out your details below to submit an inquiry directly. We will review your dates and respond promptly.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-16 lg:gap-24 items-start">
           {/* Form Side */}
-          <div className="lg:col-span-7 bg-primary/60 border border-white/10 p-8 md:p-12 rounded-sm backdrop-blur-sm shadow-2xl">
+          <div className="lg:col-span-7 bg-primary/60 border border-white/10 p-5 sm:p-8 md:p-12 rounded-sm backdrop-blur-sm shadow-2xl">
             <AnimatePresence mode="wait">
               {status === 'success' ? (
                 /* Success Message View */
@@ -155,15 +155,15 @@ export function Contact() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
-                  className="py-12 px-6 text-center space-y-6"
+                  className="py-8 sm:py-12 px-4 sm:px-6 text-center space-y-5 sm:space-y-6"
                 >
-                  <div className="w-16 h-16 rounded-full bg-bronze/20 border border-bronze flex items-center justify-center mx-auto text-bronze text-2xl">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-bronze/20 border border-bronze flex items-center justify-center mx-auto text-bronze text-2xl">
                     ✓
                   </div>
                   <h3 className="font-display text-2xl md:text-3xl text-white">
                     Enquiry Sent Successfully
                   </h3>
-                  <p className="text-body-lg text-stone max-w-md mx-auto">
+                  <p className="text-body-lg text-stone max-w-md mx-auto text-xs sm:text-base">
                     Thank you! Your enquiry has been sent successfully. We will get back to you shortly.
                   </p>
                   <button
@@ -171,7 +171,7 @@ export function Contact() {
                     onClick={() => setStatus('idle')}
                     onMouseEnter={() => setCursorVariant('button')}
                     onMouseLeave={() => setCursorVariant('default')}
-                    className="mt-6 uppercase tracking-[0.2em] font-heading text-xs border border-white/20 hover:border-bronze px-8 py-4 text-white hover:text-bronze transition-colors duration-300 cursor-pointer inline-block"
+                    className="mt-4 sm:mt-6 uppercase tracking-[0.2em] font-heading text-xs border border-white/20 hover:border-bronze px-7 py-3.5 sm:px-8 sm:py-4 text-white hover:text-bronze transition-colors duration-300 cursor-pointer inline-block"
                   >
                     Send Another Enquiry
                   </button>
@@ -183,7 +183,7 @@ export function Contact() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="flex flex-col gap-8"
+                  className="flex flex-col gap-6 sm:gap-8"
                   onSubmit={handleSubmit}
                 >
                   {/* Web3Forms Access Key Setup Banner if key is unconfigured */}
@@ -217,9 +217,9 @@ export function Contact() {
                   />
 
                   {/* Row 1: Name & Phone */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                     <ScrollReveal delay={0.1}>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col gap-1.5 sm:gap-2">
                         <label className="text-[10px] uppercase tracking-[0.2em] text-stone font-heading">
                           Full Name *
                         </label>
@@ -231,13 +231,13 @@ export function Contact() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="e.g. Anjali & Rohan"
-                          className="form-input w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder-white/20 focus:outline-none focus:border-bronze transition-colors text-base disabled:opacity-50"
+                          className="form-input w-full bg-transparent border-b border-white/20 pb-2.5 sm:pb-3 text-white placeholder-white/25 focus:outline-none focus:border-bronze transition-colors text-base disabled:opacity-50 min-h-[44px]"
                         />
                       </div>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.2}>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col gap-1.5 sm:gap-2">
                         <label className="text-[10px] uppercase tracking-[0.2em] text-stone font-heading">
                           Phone Number *
                         </label>
@@ -249,16 +249,16 @@ export function Contact() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+91 98765 43210"
-                          className="form-input w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder-white/20 focus:outline-none focus:border-bronze transition-colors text-base disabled:opacity-50"
+                          className="form-input w-full bg-transparent border-b border-white/20 pb-2.5 sm:pb-3 text-white placeholder-white/25 focus:outline-none focus:border-bronze transition-colors text-base disabled:opacity-50 min-h-[44px]"
                         />
                       </div>
                     </ScrollReveal>
                   </div>
 
                   {/* Row 2: Email & Location */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                     <ScrollReveal delay={0.3}>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col gap-1.5 sm:gap-2">
                         <label className="text-[10px] uppercase tracking-[0.2em] text-stone font-heading">
                           Email Address *
                         </label>
@@ -270,13 +270,13 @@ export function Contact() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="anjali@example.com"
-                          className="form-input w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder-white/20 focus:outline-none focus:border-bronze transition-colors text-base disabled:opacity-50"
+                          className="form-input w-full bg-transparent border-b border-white/20 pb-2.5 sm:pb-3 text-white placeholder-white/25 focus:outline-none focus:border-bronze transition-colors text-base disabled:opacity-50 min-h-[44px]"
                         />
                       </div>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.4}>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col gap-1.5 sm:gap-2">
                         <label className="text-[10px] uppercase tracking-[0.2em] text-stone font-heading">
                           Event Location / City *
                         </label>
@@ -288,16 +288,16 @@ export function Contact() {
                           value={formData.location}
                           onChange={handleChange}
                           placeholder="e.g. Kochi, Kerala / Destination"
-                          className="form-input w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder-white/20 focus:outline-none focus:border-bronze transition-colors text-base disabled:opacity-50"
+                          className="form-input w-full bg-transparent border-b border-white/20 pb-2.5 sm:pb-3 text-white placeholder-white/25 focus:outline-none focus:border-bronze transition-colors text-base disabled:opacity-50 min-h-[44px]"
                         />
                       </div>
                     </ScrollReveal>
                   </div>
 
                   {/* Row 3: Event Type & Event Date */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                     <ScrollReveal delay={0.5}>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col gap-1.5 sm:gap-2">
                         <label className="text-[10px] uppercase tracking-[0.2em] text-stone font-heading">
                           Event Type *
                         </label>
@@ -307,7 +307,7 @@ export function Contact() {
                           disabled={status === 'submitting'}
                           value={formData.eventType}
                           onChange={handleChange}
-                          className="form-input w-full bg-transparent border-b border-white/20 pb-3 text-white focus:outline-none focus:border-bronze transition-colors appearance-none cursor-pointer text-base disabled:opacity-50"
+                          className="form-input w-full bg-transparent border-b border-white/20 pb-2.5 sm:pb-3 text-white focus:outline-none focus:border-bronze transition-colors appearance-none cursor-pointer text-base disabled:opacity-50 min-h-[44px]"
                         >
                           <option value="" disabled className="bg-secondary text-stone">Select Event Type</option>
                           <option value="Wedding" className="bg-secondary text-white">Wedding</option>
@@ -323,7 +323,7 @@ export function Contact() {
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.6}>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col gap-1.5 sm:gap-2">
                         <label className="text-[10px] uppercase tracking-[0.2em] text-stone font-heading">
                           Event Date *
                         </label>
@@ -334,7 +334,7 @@ export function Contact() {
                           disabled={status === 'submitting'}
                           value={formData.eventDate}
                           onChange={handleChange}
-                          className="form-input w-full bg-transparent border-b border-white/20 pb-3 text-white focus:outline-none focus:border-bronze transition-colors text-base disabled:opacity-50"
+                          className="form-input w-full bg-transparent border-b border-white/20 pb-2.5 sm:pb-3 text-white focus:outline-none focus:border-bronze transition-colors text-base disabled:opacity-50 min-h-[44px]"
                         />
                       </div>
                     </ScrollReveal>
@@ -342,7 +342,7 @@ export function Contact() {
 
                   {/* Vision & Additional Details */}
                   <ScrollReveal delay={0.7}>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
                       <label className="text-[10px] uppercase tracking-[0.2em] text-stone font-heading">
                         Vision & Additional Details
                       </label>
@@ -353,7 +353,7 @@ export function Contact() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Tell us about your event schedule, venue, or specific creative ideas..."
-                        className="form-input w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder-white/20 focus:outline-none focus:border-bronze transition-colors resize-none text-base disabled:opacity-50"
+                        className="form-input w-full bg-transparent border-b border-white/20 pb-2.5 sm:pb-3 text-white placeholder-white/25 focus:outline-none focus:border-bronze transition-colors resize-none text-base disabled:opacity-50"
                       />
                     </div>
                   </ScrollReveal>
@@ -363,13 +363,13 @@ export function Contact() {
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="p-4 bg-red-950/40 border border-red-500/30 text-red-200 text-sm rounded flex items-center justify-between"
+                      className="p-3.5 sm:p-4 bg-red-950/40 border border-red-500/30 text-red-200 text-xs sm:text-sm rounded flex items-center justify-between"
                     >
                       <span>{errorMessage}</span>
                       <button
                         type="button"
                         onClick={() => setStatus('idle')}
-                        className="text-xs uppercase tracking-widest text-white/80 hover:text-white underline ml-4"
+                        className="text-xs uppercase tracking-widest text-white/80 hover:text-white underline ml-3 flex-shrink-0"
                       >
                         Try Again
                       </button>
@@ -383,7 +383,7 @@ export function Contact() {
                       disabled={status === 'submitting'}
                       onMouseEnter={() => setCursorVariant('button')}
                       onMouseLeave={() => setCursorVariant('default')}
-                      className="mt-4 w-full py-5 px-8 bg-bronze hover:bg-bronze/80 text-white font-heading text-xs tracking-[0.25em] uppercase font-semibold transition-all duration-300 shadow-[0_0_25px_rgba(139,115,85,0.3)] hover:shadow-[0_0_35px_rgba(139,115,85,0.5)] flex items-center justify-center gap-3 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="mt-2 sm:mt-4 w-full py-4 sm:py-5 px-6 sm:px-8 bg-bronze hover:bg-bronze/80 text-white font-heading text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase font-semibold transition-all duration-300 shadow-[0_0_25px_rgba(139,115,85,0.3)] hover:shadow-[0_0_35px_rgba(139,115,85,0.5)] flex items-center justify-center gap-3 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed min-h-[50px]"
                     >
                       {status === 'submitting' ? (
                         <>
@@ -404,25 +404,25 @@ export function Contact() {
           </div>
 
           {/* Contact Details Side */}
-          <div className="lg:col-span-5 flex flex-col gap-12 pt-4">
+          <div className="lg:col-span-5 flex flex-col gap-8 sm:gap-12 pt-2 sm:pt-4">
             <ScrollReveal delay={0.2}>
-              <div className="space-y-4">
-                <h3 className="text-editorial text-white text-3xl font-display">Get In Touch Directly</h3>
-                <p className="text-body-lg text-stone">
+              <div className="space-y-3 sm:space-y-4">
+                <h3 className="text-editorial text-white text-2xl sm:text-3xl font-display">Get In Touch Directly</h3>
+                <p className="text-body-lg text-stone text-xs sm:text-base">
                   Available for assignments in Kerala, India and worldwide destination locations. Let's discuss your celebration.
                 </p>
               </div>
             </ScrollReveal>
 
-            <div className="flex flex-col gap-8 border-t border-white/10 pt-8">
+            <div className="flex flex-col gap-6 sm:gap-8 border-t border-white/10 pt-6 sm:pt-8">
               <ScrollReveal delay={0.3}>
                 <div className="flex flex-col gap-1">
-                  <span className="text-label text-stone tracking-widest text-xs uppercase">Direct Phone</span>
+                  <span className="text-label text-stone tracking-widest text-[10px] sm:text-xs uppercase">Direct Phone</span>
                   <a
                     href="tel:+919544885698"
                     onMouseEnter={() => setCursorVariant('link')}
                     onMouseLeave={() => setCursorVariant('default')}
-                    className="text-white text-xl font-heading hover:text-bronze transition-colors w-fit nav-link-premium"
+                    className="text-white text-lg sm:text-xl font-heading hover:text-bronze transition-colors w-fit nav-link-premium min-h-[44px] flex items-center"
                   >
                     +91 9544885698
                   </a>
@@ -431,12 +431,12 @@ export function Contact() {
 
               <ScrollReveal delay={0.4}>
                 <div className="flex flex-col gap-1">
-                  <span className="text-label text-stone tracking-widest text-xs uppercase">Email Address</span>
+                  <span className="text-label text-stone tracking-widest text-[10px] sm:text-xs uppercase">Email Address</span>
                   <a
                     href="mailto:bhavineshbharathan@gmail.com"
                     onMouseEnter={() => setCursorVariant('link')}
                     onMouseLeave={() => setCursorVariant('default')}
-                    className="text-white text-xl font-heading hover:text-bronze transition-colors w-fit nav-link-premium"
+                    className="text-white text-base sm:text-xl font-heading hover:text-bronze transition-colors w-fit nav-link-premium min-h-[44px] flex items-center break-all sm:break-normal"
                   >
                     bhavineshbharathan@gmail.com
                   </a>
@@ -445,8 +445,8 @@ export function Contact() {
 
               <ScrollReveal delay={0.5}>
                 <div className="flex flex-col gap-1">
-                  <span className="text-label text-stone tracking-widest text-xs uppercase">Base Studio Location</span>
-                  <p className="text-white text-xl font-heading">
+                  <span className="text-label text-stone tracking-widest text-[10px] sm:text-xs uppercase">Base Studio Location</span>
+                  <p className="text-white text-base sm:text-xl font-heading">
                     Kerala, India (Available Worldwide)
                   </p>
                 </div>
@@ -454,14 +454,14 @@ export function Contact() {
 
               <ScrollReveal delay={0.6}>
                 <div className="flex flex-col gap-1">
-                  <span className="text-label text-stone tracking-widest text-xs uppercase">Instagram Handle</span>
+                  <span className="text-label text-stone tracking-widest text-[10px] sm:text-xs uppercase">Instagram Handle</span>
                   <a
                     href="https://instagram.com/bhavinesh_bharathan"
                     target="_blank"
                     rel="noopener noreferrer"
                     onMouseEnter={() => setCursorVariant('link')}
                     onMouseLeave={() => setCursorVariant('default')}
-                    className="text-white text-xl font-heading hover:text-bronze transition-colors w-fit nav-link-premium"
+                    className="text-white text-lg sm:text-xl font-heading hover:text-bronze transition-colors w-fit nav-link-premium min-h-[44px] flex items-center"
                   >
                     @bhavinesh_bharathan
                   </a>

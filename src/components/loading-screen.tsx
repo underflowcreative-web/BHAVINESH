@@ -39,7 +39,7 @@ export function LoadingScreen() {
             </svg>
           </div>
 
-          <div className="relative text-center">
+          <div className="relative text-center px-4 max-w-[95vw] sm:max-w-xl mx-auto flex flex-col items-center justify-center">
             {/* Logo image */}
             <AnimatePresence>
               {showContent && (
@@ -47,12 +47,12 @@ export function LoadingScreen() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="mb-8 flex justify-center"
+                  className="mb-6 sm:mb-8 flex justify-center"
                 >
                   <motion.img
                     src="/logo.png"
                     alt="Bhavinesh Bharathan Photography"
-                    className="h-16 w-auto object-contain invert-0"
+                    className="h-12 sm:h-16 w-auto object-contain invert-0"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -65,15 +65,15 @@ export function LoadingScreen() {
               )}
             </AnimatePresence>
 
-            {/* Brand name - staggered letter reveal */}
-            <div className="overflow-hidden">
+            {/* Brand name - staggered letter reveal with responsive text size and safe line wrapping */}
+            <div className="overflow-hidden w-full flex justify-center">
               <AnimatePresence>
                 {showContent && (
-                  <motion.div className="flex justify-center gap-[0.04em]">
+                  <motion.div className="flex flex-wrap justify-center items-center gap-[0.02em] sm:gap-[0.04em] max-w-full">
                     {brandName.split("").map((letter, i) => (
                       <motion.span
                         key={i}
-                        className="text-section-title text-[#e8e4df] inline-block"
+                        className="text-[clamp(1.15rem,4.8vw,3.2rem)] text-[#e8e4df] inline-block font-light tracking-[0.1em] sm:tracking-[0.18em]"
                         style={{ fontFamily: "var(--font-display)" }}
                         initial={{ y: "120%", opacity: 0 }}
                         animate={{ y: "0%", opacity: 1 }}
@@ -92,11 +92,11 @@ export function LoadingScreen() {
             </div>
 
             {/* Subtitle */}
-            <div className="overflow-hidden mt-3">
+            <div className="overflow-hidden mt-2 sm:mt-3">
               <AnimatePresence>
                 {showContent && (
                   <motion.p
-                    className="text-label text-stone tracking-[0.4em]"
+                    className="text-[10px] sm:text-xs text-stone tracking-[0.3em] sm:tracking-[0.4em] font-heading uppercase"
                     initial={{ y: "100%", opacity: 0 }}
                     animate={{ y: "0%", opacity: 1 }}
                     transition={{
@@ -113,9 +113,9 @@ export function LoadingScreen() {
 
             {/* Loading line */}
             <motion.div
-              className="mt-10 h-[1px] bg-bronze/30 mx-auto"
+              className="mt-8 sm:mt-10 h-[1px] bg-bronze/30 mx-auto"
               initial={{ width: 0 }}
-              animate={{ width: showContent ? 120 : 0 }}
+              animate={{ width: showContent ? 100 : 0 }}
               transition={{ duration: 2, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             />
           </div>

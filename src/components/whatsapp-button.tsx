@@ -50,7 +50,7 @@ export function WhatsAppButton() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[800] flex items-center group"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-[800] flex items-center group"
           onMouseEnter={() => {
             setIsHovered(true);
             setCursorVariant('button');
@@ -68,7 +68,7 @@ export function WhatsAppButton() {
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: 10, scale: 0.9 }}
                 transition={{ duration: 0.2, ease: 'easeOut' }}
-                className="absolute right-16 top-1/2 -translate-y-1/2 whitespace-nowrap text-[10px] font-heading font-medium tracking-[0.2em] uppercase text-[#e8e4df] bg-[#0d0d0d]/95 px-3.5 py-2 border border-[#8B7355]/30 rounded shadow-xl backdrop-blur-md pointer-events-none"
+                className="absolute right-14 sm:right-16 top-1/2 -translate-y-1/2 whitespace-nowrap text-[9.5px] sm:text-[10px] font-heading font-medium tracking-[0.2em] uppercase text-[#e8e4df] bg-[#0d0d0d]/95 px-3 py-1.5 sm:px-3.5 sm:py-2 border border-[#8B7355]/30 rounded shadow-xl backdrop-blur-md pointer-events-none"
               >
                 Enquire via WhatsApp
               </motion.span>
@@ -81,14 +81,14 @@ export function WhatsAppButton() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Enquire via WhatsApp"
-            className="relative w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#0d0d0d]/90 border border-[#8B7355]/40 hover:border-[#8B7355] shadow-[0_8px_30px_rgba(0,0,0,0.6)] backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(139,115,85,0.35)] group"
+            className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-[#0d0d0d]/90 border border-[#8B7355]/40 hover:border-[#8B7355] shadow-[0_8px_30px_rgba(0,0,0,0.6)] backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(139,115,85,0.35)] group"
           >
             {/* Soft Ambient Glow Effect */}
             <div className="absolute inset-0 rounded-full bg-[#8B7355]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm pointer-events-none" />
 
             {/* Official WhatsApp Green SVG Icon */}
             <svg
-              className="w-6 h-6 md:w-7 md:h-7 text-[#25D366] transition-transform duration-300 group-hover:scale-110 relative z-10"
+              className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-[#25D366] transition-transform duration-300 group-hover:scale-110 relative z-10"
               fill="currentColor"
               viewBox="0 0 24 24"
             >

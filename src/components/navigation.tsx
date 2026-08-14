@@ -66,7 +66,7 @@ export function Navigation() {
           onMouseEnter={() => setCursorVariant("link")}
           onMouseLeave={() => setCursorVariant("default")}
         >
-          <span className="font-heading text-sm tracking-[0.25em] uppercase text-[#e8e4df] font-light">
+          <span className="font-heading text-xs sm:text-sm tracking-[0.16em] sm:tracking-[0.25em] uppercase text-[#e8e4df] font-light">
             BHAVINESH BHARATHAN
           </span>
         </Link>
@@ -74,7 +74,7 @@ export function Navigation() {
         {/* Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="relative z-[950] w-10 h-10 flex flex-col items-end justify-center gap-[6px] group"
+          className="relative z-[950] w-11 h-11 flex flex-col items-end justify-center gap-[6px] group cursor-pointer p-2"
           onMouseEnter={() => setCursorVariant("button")}
           onMouseLeave={() => setCursorVariant("default")}
           aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -112,7 +112,7 @@ export function Navigation() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-[890] bg-primary flex items-center overflow-y-auto py-24"
+            className="fixed inset-0 z-[890] bg-primary flex items-center overflow-y-auto py-20 sm:py-24"
             initial={{ clipPath: "inset(0 0 0 100%)" }}
             animate={{ clipPath: "inset(0 0 0 0%)" }}
             exit={{ clipPath: "inset(0 0 0 100%)" }}
@@ -129,8 +129,8 @@ export function Navigation() {
             </div>
 
             {/* Menu Content */}
-            <div className="section-padding w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <nav className="lg:col-span-7 flex flex-col gap-2 md:gap-3">
+            <div className="section-padding w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto">
+              <nav className="lg:col-span-7 flex flex-col gap-1 sm:gap-2 md:gap-3">
                 {menuItems.map((item, i) => (
                   <div key={item.label} className="overflow-hidden">
                     <motion.div
@@ -148,29 +148,29 @@ export function Navigation() {
                           href={item.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block text-section-title text-[#e8e4df] hover:text-bronze transition-colors duration-500 py-1 nav-link-premium"
+                          className="block text-2xl sm:text-3xl md:text-section-title text-[#e8e4df] hover:text-bronze transition-colors duration-500 py-2 sm:py-1 nav-link-premium min-h-[44px] flex items-center"
                           onClick={() => setIsOpen(false)}
                           onMouseEnter={() => setCursorVariant("link")}
                           onMouseLeave={() => setCursorVariant("default")}
                         >
-                          <span className="inline-flex items-center gap-4">
-                            <span className="text-label text-stone/40 font-heading">
+                          <span className="inline-flex items-center gap-3 sm:gap-4">
+                            <span className="text-label text-stone/40 font-heading text-xs">
                               {String(i + 1).padStart(2, "0")}
                             </span>
                             {item.label}
-                            <span className="text-sm text-stone/40">↗</span>
+                            <span className="text-xs sm:text-sm text-stone/40">↗</span>
                           </span>
                         </a>
                       ) : (
                         <Link
                           href={item.href}
-                          className="block text-section-title text-[#e8e4df] hover:text-bronze transition-colors duration-500 py-1 nav-link-premium"
+                          className="block text-2xl sm:text-3xl md:text-section-title text-[#e8e4df] hover:text-bronze transition-colors duration-500 py-2 sm:py-1 nav-link-premium min-h-[44px] flex items-center"
                           onClick={() => setIsOpen(false)}
                           onMouseEnter={() => setCursorVariant("link")}
                           onMouseLeave={() => setCursorVariant("default")}
                         >
-                          <span className="inline-flex items-center gap-4">
-                            <span className="text-label text-stone/40 font-heading">
+                          <span className="inline-flex items-center gap-3 sm:gap-4">
+                            <span className="text-label text-stone/40 font-heading text-xs">
                               {String(i + 1).padStart(2, "0")}
                             </span>
                             {item.label}
@@ -183,11 +183,11 @@ export function Navigation() {
               </nav>
 
               {/* Categories Column */}
-              <div className="lg:col-span-5 flex flex-col gap-6 border-t lg:border-t-0 lg:border-l border-white/10 pt-8 lg:pt-0 lg:pl-12">
+              <div className="lg:col-span-5 flex flex-col gap-4 sm:gap-6 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 sm:pt-8 lg:pt-0 lg:pl-12">
                 <span className="text-label text-bronze tracking-[0.25em] uppercase text-xs font-semibold">
                   Collections ({categories.length})
                 </span>
-                <div className="grid grid-cols-2 gap-3 text-sm font-heading">
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3 text-xs sm:text-sm font-heading">
                   {categories.map((cat) => (
                     <Link
                       key={cat.slug}
@@ -195,10 +195,10 @@ export function Navigation() {
                       onClick={() => setIsOpen(false)}
                       onMouseEnter={() => setCursorVariant("link")}
                       onMouseLeave={() => setCursorVariant("default")}
-                      className="text-stone hover:text-white transition-colors duration-300 flex items-center justify-between py-1 border-b border-white/5"
+                      className="text-stone hover:text-white transition-colors duration-300 flex items-center justify-between py-2 sm:py-1 border-b border-white/5 min-h-[38px]"
                     >
-                      <span>{cat.name}</span>
-                      <span className="text-xs text-stone/40">{cat.count}</span>
+                      <span className="truncate pr-1">{cat.name}</span>
+                      <span className="text-xs text-stone/40 font-mono">{cat.count}</span>
                     </Link>
                   ))}
                 </div>

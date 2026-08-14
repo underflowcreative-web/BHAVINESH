@@ -18,7 +18,7 @@ export function Services() {
   return (
     <section id="services" className="section-padding editorial-gap bg-primary relative overflow-hidden">
       <ScrollReveal>
-        <div className="mb-20 md:mb-32">
+        <div className="mb-12 sm:mb-20 md:mb-32">
           <h2 className="text-section-title">
             <span className="block">What I</span>
             <span className="block text-stone">Offer</span>
@@ -26,21 +26,21 @@ export function Services() {
         </div>
       </ScrollReveal>
 
-      <div className="flex flex-col gap-24 md:gap-32">
+      <div className="flex flex-col gap-14 sm:gap-20 md:gap-32">
         {services.map((service, index) => {
           const isEven = index % 2 === 0;
           const number = (index + 1).toString().padStart(2, '0');
           
           return (
             <ScrollReveal key={service.id}>
-              <div className="relative w-full flex flex-col md:flex-row items-center gap-8 md:gap-16">
-                <span className="absolute top-0 font-display text-[8rem] md:text-[12rem] leading-none text-white/[0.03] font-bold z-0 pointer-events-none select-none left-0 md:left-auto md:right-0">
+              <div className="relative w-full flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-16">
+                <span className="absolute top-0 font-display text-[5rem] sm:text-[8rem] md:text-[12rem] leading-none text-white/[0.03] font-bold z-0 pointer-events-none select-none left-0 md:left-auto md:right-0 max-w-full overflow-hidden">
                   {number}
                 </span>
                 
                 <div className={`w-full md:w-1/2 relative z-10 ${!isEven ? 'md:order-2' : ''}`}>
                   <div 
-                    className="portfolio-image-wrapper relative w-full h-[350px] md:h-[450px] overflow-hidden"
+                    className="portfolio-image-wrapper relative w-full h-[240px] sm:h-[350px] md:h-[450px] overflow-hidden rounded-sm"
                     onMouseMove={handleMouseMove}
                     onMouseEnter={() => setCursorVariant('view')}
                     onMouseLeave={() => setCursorVariant('default')}
@@ -57,12 +57,12 @@ export function Services() {
                 
                 <div className={`w-full md:w-1/2 relative z-10 flex flex-col justify-center ${!isEven ? 'md:order-1 md:items-end md:text-right' : ''}`}>
                   <div className={`max-w-xl ${!isEven ? 'md:ml-auto' : ''}`}>
-                    <h3 className="text-editorial font-display mb-6 text-[#e8e4df]">{service.title}</h3>
-                    <p className="text-body-lg text-stone mb-10">{service.description}</p>
+                    <h3 className="text-editorial font-display mb-3 sm:mb-6 text-[#e8e4df]">{service.title}</h3>
+                    <p className="text-body-lg text-stone mb-6 sm:mb-10">{service.description}</p>
                     
                     <a 
                       href="#contact" 
-                      className="text-label hover:text-bronze transition-colors flex items-center gap-2 group nav-link-premium"
+                      className="text-label hover:text-bronze transition-colors flex items-center gap-2 group nav-link-premium min-h-[44px]"
                       onMouseEnter={() => setCursorVariant('link')}
                       onMouseLeave={() => setCursorVariant('default')}
                     >

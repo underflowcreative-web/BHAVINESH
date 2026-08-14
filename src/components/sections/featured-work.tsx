@@ -34,9 +34,9 @@ export function FeaturedWork() {
   return (
     <section id="portfolio" className="section-padding editorial-gap bg-primary relative">
       <ScrollReveal>
-        <div className="relative mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-12">
+        <div className="relative mb-8 sm:mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 md:gap-12 overflow-hidden">
           <div className="relative z-10">
-            <span className="absolute -top-12 md:-top-24 left-0 font-display text-[8rem] md:text-[15rem] leading-none text-white/5 font-bold z-0 pointer-events-none select-none">
+            <span className="absolute -top-8 sm:-top-12 md:-top-24 left-0 font-display text-[5rem] sm:text-[8rem] md:text-[15rem] leading-none text-white/5 font-bold z-0 pointer-events-none select-none max-w-full overflow-hidden">
               01
             </span>
             <div className="relative z-10">
@@ -57,14 +57,14 @@ export function FeaturedWork() {
         </div>
       </ScrollReveal>
 
-      {/* Luxury Category Filter Row */}
+      {/* Luxury Category Filter Row - Horizontally Scrollable on Mobile, Wrap on Desktop */}
       <ScrollReveal delay={0.2}>
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-12 pb-5 border-b border-white/10">
+        <div className="flex items-center gap-x-4 sm:gap-x-6 gap-y-2 sm:gap-y-3 mb-8 sm:mb-12 pb-3 sm:pb-5 border-b border-white/10 overflow-x-auto no-scrollbar flex-nowrap sm:flex-wrap">
           <button
             onClick={() => setSelectedCategory('all')}
             onMouseEnter={() => setCursorVariant('button')}
             onMouseLeave={() => setCursorVariant('default')}
-            className={`text-[11px] sm:text-xs uppercase tracking-[0.22em] font-heading py-2 transition-all duration-300 relative ${
+            className={`text-[11px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.22em] font-heading py-2 transition-all duration-300 relative flex-shrink-0 cursor-pointer ${
               selectedCategory === 'all'
                 ? 'text-white font-medium after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#8B7355]'
                 : 'text-stone/60 hover:text-white'
@@ -81,7 +81,7 @@ export function FeaturedWork() {
                 onClick={() => setSelectedCategory(cat.slug)}
                 onMouseEnter={() => setCursorVariant('button')}
                 onMouseLeave={() => setCursorVariant('default')}
-                className={`text-[11px] sm:text-xs uppercase tracking-[0.22em] font-heading py-2 transition-all duration-300 relative ${
+                className={`text-[11px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.22em] font-heading py-2 transition-all duration-300 relative flex-shrink-0 cursor-pointer ${
                   isSelected
                     ? 'text-white font-medium after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#8B7355]'
                     : 'text-stone/60 hover:text-white'
@@ -95,17 +95,17 @@ export function FeaturedWork() {
       </ScrollReveal>
 
       {/* Gallery Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3">
         {filteredImages.map((image, index) => {
           let spanClass = '';
-          let heightClass = 'h-[220px] md:h-[300px]';
+          let heightClass = 'h-[240px] sm:h-[220px] md:h-[300px]';
 
           if (index % 5 === 0) {
-            spanClass = 'col-span-2 row-span-2';
-            heightClass = 'h-[440px] md:h-[610px]';
+            spanClass = 'sm:col-span-2 sm:row-span-2';
+            heightClass = 'h-[300px] sm:h-[440px] md:h-[610px]';
           } else if (index % 5 === 3) {
-            spanClass = 'col-span-2';
-            heightClass = 'h-[260px] md:h-[320px]';
+            spanClass = 'sm:col-span-2';
+            heightClass = 'h-[240px] sm:h-[260px] md:h-[320px]';
           }
 
           const catName = categories.find(c => c.slug === image.category)?.name || image.category;
@@ -117,7 +117,7 @@ export function FeaturedWork() {
               className={spanClass}
             >
               <div
-                className={`portfolio-image-wrapper relative w-full overflow-hidden ${heightClass} cursor-pointer`}
+                className={`portfolio-image-wrapper relative w-full overflow-hidden ${heightClass} cursor-pointer rounded-sm`}
                 onClick={() => openLightbox(index)}
                 onMouseMove={handleMouseMove}
                 onMouseEnter={() => setCursorVariant('view')}
@@ -139,7 +139,7 @@ export function FeaturedWork() {
         })}
       </div>
 
-      <div className="w-full h-[1px] bg-white/10 mt-24"></div>
+      <div className="w-full h-[1px] bg-white/10 mt-16 sm:mt-24"></div>
 
       {/* Lightbox */}
       <Lightbox
